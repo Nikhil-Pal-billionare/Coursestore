@@ -30,12 +30,21 @@ export default async function DashboardLayout({
           <Link href="/dashboard" className="font-bold tracking-tight">
             CourseMarket
           </Link>
-          <nav className="flex items-center gap-6 text-sm font-medium">
+          <nav className="flex items-center gap-5 text-sm font-medium">
             <Link href="/dashboard/products" className="text-zinc-700 hover:text-zinc-900">
               Products
             </Link>
             <Link href="/dashboard/earnings" className="text-zinc-700 hover:text-zinc-900">
               Earnings
+            </Link>
+            <Link href="/dashboard/payouts" className="text-zinc-700 hover:text-zinc-900">
+              Payouts
+            </Link>
+            <Link href="/dashboard/ads" className="text-zinc-700 hover:text-zinc-900">
+              Promote
+            </Link>
+            <Link href="/dashboard/settings" className="text-zinc-700 hover:text-zinc-900">
+              Settings
             </Link>
             {profile?.username && (
               <Link
