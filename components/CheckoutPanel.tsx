@@ -92,6 +92,10 @@ export default function CheckoutPanel({
   }
 
   if (successUrl) {
+    // The download URL is /api/download/[token] - extract the token so we
+    // can link to the matching refund request page for this order.
+    const downloadToken = successUrl.split("/").pop();
+
     return (
       <div className="bg-white border border-green-200 rounded-xl p-6">
         <p className="font-semibold text-green-700">Payment successful!</p>
@@ -104,6 +108,15 @@ export default function CheckoutPanel({
         >
           Download now
         </a>
+        <p className="text-xs text-zinc-400 mt-4">
+          Having an issue with this purchase?{" "}
+          <a
+            href={`/refund/${downloadToken}`}
+            className="underline text-zinc-500"
+          >
+            Request a refund
+          </a>
+        </p>
       </div>
     );
   }
